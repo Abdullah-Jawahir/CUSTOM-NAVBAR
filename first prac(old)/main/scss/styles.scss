@@ -12,7 +12,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: #fff;
-    background-image: url("../bg.png");
+    background-image: url("../main/bg.png");
     box-sizing: border-box;
     width: 1300px;
 }
@@ -57,10 +57,10 @@ header {
         a {
             color: whitesmoke;
             text-decoration: none;
+            position: relative;
 
             &:hover {
                 color: black;
-                border-bottom: 3px solid $tertory-clr;
                 transition: all 0.4s ease-in;
             }
         }
@@ -74,8 +74,25 @@ header {
 
     ul {
         a {
-            &:hover {
-                border-bottom: 3px solid $more-d-blue;
+
+            padding-bottom: 5px;
+            
+
+            &::after{
+
+                content: '';
+                background-color: $more-d-blue;
+                position: absolute;
+                bottom: 0%;
+                left: 0%;
+                height: 3px;
+                width: 0%;
+            }
+
+            &:hover::after {
+
+                width: 100%;
+                transition: all 600ms ease;
             }
         }
     }
@@ -94,6 +111,7 @@ header {
 
     ul {
         a {
+            
             &:hover {
                 border-bottom: 3px solid $secondary-clr;
             }
